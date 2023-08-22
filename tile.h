@@ -10,6 +10,7 @@ class Tile
         int id;
         Tile(std::string, int);
         bool matches(sf::Image, sf::IntRect);
+        std::vector<std::vector<sf::Color>> getColorMap();
 };
 
 #endif

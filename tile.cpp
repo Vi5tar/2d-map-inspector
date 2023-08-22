@@ -22,3 +22,18 @@ bool Tile::matches(sf::Image imageToCompare, sf::IntRect areaToCompare)
     }
     return true;
 }
+
+std::vector<std::vector<sf::Color>> Tile::getColorMap()
+{
+    std::vector<std::vector<sf::Color>> colorMap;
+    for (int j = 0; j < image.getSize().y; j++)
+    {
+        std::vector<sf::Color> row;
+        for (int i = 0; i < image.getSize().x; i++)
+        {   
+            row.push_back(image.getPixel(i, j));
+        }
+        colorMap.push_back(row);
+    }
+    return colorMap;
+}
